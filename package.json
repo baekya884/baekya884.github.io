@@ -23,6 +23,7 @@
     "semantic-ui-react": "^0.87.2"
   },
   "devDependencies": {
+    "gh-pages": "^2.1.1",
     "prettier": "^1.18.2"
   },
   "keywords": [
