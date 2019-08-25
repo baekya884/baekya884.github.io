@@ -1,0 +1,10 @@
+.ui.card {
+    width: 100%
+}
+
+.header a {
+    color: black;
+}
+.header a:hover {
+    color: #FF9800;
+}

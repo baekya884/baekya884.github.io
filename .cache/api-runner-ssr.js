@@ -1,21 +1,18 @@
 var plugins = [{
-      plugin: require('/Users/chpark/projects/baekya884.github.io/node_modules/gatsby-plugin-feed/gatsby-ssr'),
-      options: {"plugins":[],"query":"\n          {\n            site {\n              siteMetadata {\n                site_url: url\n                title\n                description: subtitle\n              }\n            }\n          }\n        ","feeds":[{"query":"\n              {\n                allMarkdownRemark(\n                  limit: 1000,\n                  sort: { order: DESC, fields: [frontmatter___date] },\n                  filter: { frontmatter: { template: { eq: \"post\" }, draft: { ne: true } } }\n                ) {\n                  edges {\n                    node {\n                      html\n                      fields {\n                        slug\n                      }\n                      frontmatter {\n                        title\n                        date\n                        template\n                        draft\n                        description\n                      }\n                    }\n                  }\n                }\n              }\n            ","output":"/rss.xml"}]},
-    },{
-      plugin: require('/Users/chpark/projects/baekya884.github.io/node_modules/gatsby-remark-autolink-headers/gatsby-ssr'),
-      options: {"plugins":[]},
-    },{
-      plugin: require('/Users/chpark/projects/baekya884.github.io/node_modules/gatsby-plugin-google-gtag/gatsby-ssr'),
-      options: {"plugins":[],"trackingIds":["UA-73379983-2"],"pluginConfig":{"head":true}},
-    },{
-      plugin: require('/Users/chpark/projects/baekya884.github.io/node_modules/gatsby-plugin-sitemap/gatsby-ssr'),
-      options: {"plugins":[],"query":"\n          {\n            site {\n              siteMetadata {\n                url\n              }\n            }\n            allSitePage(\n              filter: {\n                path: { regex: \"/^(?!/404/|/404.html|/dev-404-page/)/\" }\n              }\n            ) {\n              edges {\n                node {\n                  path\n                }\n              }\n            }\n          }\n        ","output":"/sitemap.xml"},
-    },{
       plugin: require('/Users/chpark/projects/baekya884.github.io/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
-      options: {"plugins":[],"name":"Blog by John Doe","short_name":"Blog by John Doe","start_url":"/","background_color":"#FFF","theme_color":"#F7A046","display":"standalone","icon":"static/photo.jpg"},
+      options: {"plugins":[],"name":"my blog","short_name":"my blog","start_url":"/","background_color":"#6b37bf","theme_color":"#6b37bf","display":"standalone"},
+    },{
+      plugin: require('/Users/chpark/projects/baekya884.github.io/node_modules/gatsby-plugin-offline/gatsby-ssr'),
+      options: {"plugins":[]},
     },{
       plugin: require('/Users/chpark/projects/baekya884.github.io/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
+    },{
+      plugin: require('/Users/chpark/projects/baekya884.github.io/node_modules/gatsby-remark-images/gatsby-ssr'),
+      options: {"plugins":[],"maxWidth":590},
+    },{
+      plugin: require('/Users/chpark/projects/baekya884.github.io/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
+      options: {"plugins":[],"name":"gatsby-starter-default","short_name":"starter","start_url":"/","background_color":"#663399","theme_color":"#663399","display":"minimal-ui","icon":"src/images/gatsby-icon.png"},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [
